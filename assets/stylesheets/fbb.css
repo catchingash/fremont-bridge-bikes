@@ -8,3 +8,7 @@ header {
   text-align: center;
   vertical-align: middle;
 }
+
+.bike-small {
+  height: 2em;
+}
