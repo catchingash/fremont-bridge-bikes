@@ -25,3 +25,6 @@
   - The user can choose the day displayed.
 
 [Trello Board](https://trello.com/b/6TRsQrTE/ashley-break-project)
+
+
+Note: This will not work correctly for users that are not located in Seattle, or if the current daylight savings do not match the daylight savings on the date viewed.
