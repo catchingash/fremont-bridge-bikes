@@ -1,7 +1,7 @@
-html {
-  font-family: "Fira Mono", "DejaVu Sans Mono", Menlo, Consolas, "Liberation Mono", Monaco, "Lucida Console", monospace;
-  /*background-color: black;*/
-  /*color: white;*/
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  width: 100%;
 }
 
 header {
@@ -9,6 +9,121 @@ header {
   vertical-align: middle;
 }
 
+main {
+  text-align: center;
+}
+
+section {
+  display: inline-block;
+  vertical-align: top;
+  margin: 1em;
+  padding: 0 2em;
+  width: 25%;
+  min-width: 15em;
+  background-color: hsla(0, 0%, 95%, 1);
+}
+
+.config {
+  max-width: 10em;
+}
+
+.date-selector {
+  font-size: 1em;
+}
+
+h2 {
+  text-align: center;
+}
+
+input[type=number] {
+  width: 3em;
+}
+
+.bike-traffic {
+  width: 100%;
+  display: inline-block;
+  position: relative;
+  background-color: black;
+  background-image: url('../images/FremontBridge.png');
+  background-size: contain;
+}
+
+.bike-traffic:after {
+  padding-top: 27%;
+  display: block;
+  content: '';
+}
+
+.nb-rate {
+  color: red;
+}
+
+.sb-rate {
+  color: red;
+}
+
+.weather-icon {
+  display: inline-block;
+}
+
+.bike-icon {
+  vertical-align: middle;
+  height: 1.2em;
+  line-height: 1em;
+}
+
 .bike-small {
-  height: 2em;
+  width: 5%;
+  position: absolute;
+  top: 25%;
+  z-index: 5;
+}
+
+.bike-nb {
+  animation: nb-translate 2s linear;
+}
+
+.bike-sb {
+  /*transform: scaleX(-1);*/
+  animation: sb-translate 2s linear;
+}
+
+@keyframes nb-translate {
+  0% {
+    transform: translate(2000%, 20%);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(0em, 20%);
+    opacity: 0;
+  }
+}
+
+@keyframes sb-translate {
+  0% {
+    transform: translate(0, 150%);
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(2000%, 150%);
+    opacity: 0;
+  }
 }
