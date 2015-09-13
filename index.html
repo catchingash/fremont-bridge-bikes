@@ -4,37 +4,51 @@
     <title>Fremont Bridge Bikes</title>
     <link rel="stylesheet" media="all" href="assets/stylesheets/fbb.css"/>
     <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
-    <script type="text/javascript" src="assets/jquery-2.1.4.min.js"></script>
-    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
-    <script type="text/javascript" src="assets/javascripts/WeatherHandler.js"></script>
-    <script type="text/javascript" src="assets/javascripts/DateHandler.js"></script>
-    <script type="text/javascript" src="assets/javascripts/fbb.js"></script>
   </head>
   <body>
     <header>
       <h1>Fremont Bridge Bikes</h1>
     </header>
 
-    <section>
-      <h2>Weather</h2>
-      <img class="weather-icon">
-      <p class="weather-desc">Weather Description</p>
-      <p class="weather-temp">Temp</p>
-      <p class="weather-wind">Wind Speed</p>
-    </section>
+    <div class="bike-traffic">
+      <!-- <img src="assets/images/FremontBridge.png" class="fremont-bridge"> -->
+    </div>
 
-    <section>
-      <h2>Date</h2>
-      <p><span class="date">Date</span> @ <span class="time"> Time</span></p>
-    </section>
+    <main>
+      <section class="bike-data">
+        <h2>Current</h2>
+        <p><span class="time"></span> on <input type="date" value="" class="date-selector"></p>
+        <p><img class="weather-icon"><span class="weather-desc"></span></p>
+        <p>Temp: <span class="weather-temp"></span></p>
+        <p>Wind Speed: <span class="weather-wind"></span></p>
 
-    <section>
-      <h2>Bike Traffic</h2>
-      <img src="assets/images/bike.svg" class="bike-small">
-    </section>
+        <h3>Bike Traffic</h3>
+        <p>Northbound: <span class="nb-rate"></span> bikes per hour</p>
+        <p>Soutbound: <span class="sb-rate"></span> bikes per hour</p>
+      </section>
 
-    <footer>
-      <p>Bike icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
-    </footer>
+      <section class="config">
+        <h2>Config</h2>
+        <p><input type="number" class="timescale" value=""> seconds = 1 hour</p>
+        <p>1 <img src="assets/images/bikeIcon.svg" class="bike-icon"> = <input type="number" class="bikescale"> bikes</p>
+      </section>
+
+      <section class="info">
+        <h2>What is this?</h2>
+        This displays bike traffic by day from 10/3/2012 to (almost) present.
+
+        <h3>Credits</h3>
+        <p>Bike icon (made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>) is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a>.</p>
+        <p><a href="https://data.seattle.gov/Transportation/Fremont-Bridge-Hourly-Bicycle">Fremont Bridge Bike data</a> from the <a href="https://data.seattle.gov/">City of Seattle</a> (powered by <a href="http://www.socrata.com/">Socrata</a>).</p>
+        <p>Historical weather data from <a href="http://openweathermap.org/">OpenWeatherMap</a>.</p>
+      </section>
+    </main>
+
+    <script type="text/javascript" src="assets/jquery-2.1.4.min.js"></script>
+    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+    <script type="text/javascript" src="assets/javascripts/BikeRepository.js"></script>
+    <script type="text/javascript" src="assets/javascripts/WeatherRepository.js"></script>
+    <script type="text/javascript" src="assets/javascripts/TimeHandler.js"></script>
+    <script type="text/javascript" src="assets/javascripts/fbb.js"></script>
   </body>
 </html>
