@@ -7,7 +7,6 @@ TimeHandler.prototype.update = function(date, iterator) {
   date = new Date(date.getTime() + (iterator * 3600000));
 
   this.updateTime(date);
-  this.updateDate(date);
 };
 
 TimeHandler.prototype.updateTime = function(time) {

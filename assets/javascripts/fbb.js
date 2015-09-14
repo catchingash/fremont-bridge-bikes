@@ -49,11 +49,14 @@ FBB.initializeView = function() {
 
 FBB.display = function(date) {
   $('.timescale').attr('value', HOUR_LENGTH/1000);
+  $('.overlay-replay').remove();
+
   FBB.clearTimeouts();
   FBB.clearBikes();
 
   bikeRepository.fetch(date, FBB.triggerDisplay);
   weatherRepository.fetch(date, FBB.triggerDisplay);
+  timeHandler.updateDate(date);
 }
 
 FBB.triggerDisplay = function(date, iterator) {
@@ -66,7 +69,7 @@ FBB.triggerDisplay = function(date, iterator) {
   if (iterator < 23) {
     timeouts.push(setTimeout(FBB.triggerDisplay, HOUR_LENGTH, date, iterator + 1));
   } else {
-    // replay button? go on to the next day? (would need to confirm that there's data)
+    setTimeout(FBB.addReplayOverlay, HOUR_LENGTH);
   }
 }
 
@@ -81,6 +84,27 @@ FBB.clearBikes = function() {
   for (var i = 0; i < bikes.length; i++) {
     bikes[i].remove();
   }
+}
+
+FBB.addReplayOverlay = function() {
+  var div = $('<div class="overlay-replay">');
+  // div.text('Replay?')
+  var replayBtn = $('<button class="btn-replay">');
+  replayBtn.click(FBB.replayBtnClickHandler);
+  replayBtn.text('Replay?');
+  div.append(replayBtn);
+
+  $('.bike-traffic').append(div);
+}
+
+FBB.replayBtnClickHandler = function () {
+  console.log('click');
+  var dateElements = $('input[type=date]').val().split('-');
+  var date = new Date(dateElements[0], dateElements[1] - 1, dateElements[2]);
+
+  $('.overlay-replay').remove();
+
+  FBB.display(date);
 }
 
 // TODO: add a check to see if there's data / if it's a valid option

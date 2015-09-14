@@ -10,7 +10,7 @@ function WeatherRepository() {
 
 WeatherRepository.prototype.fetch = function(date, callback) {
   if (this.data[date]) {
-    callback(this.data[date], 0);
+    callback(date, 0);
   } else {
     var url = this.fetchURL(date);
 
