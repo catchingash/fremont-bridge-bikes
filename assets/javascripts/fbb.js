@@ -17,6 +17,11 @@ $(document).ready(function() {
   FBB.initializeView();
 
   $('input[type=date]').change( function () {
+    if ($(this).val() < '2012-10-03') {
+      alert('We only have data available on 10/3/2012 or later. Sorry about that! Please select a different date.');
+      return;
+    };
+
     var dateElements = $(this).val().split('-');
     var date = new Date(dateElements[0], dateElements[1] - 1, dateElements[2]);
 

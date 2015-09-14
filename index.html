@@ -17,7 +17,7 @@
     <main>
       <section class="bike-data">
         <h2>Current</h2>
-        <p><span class="time"></span> on <input type="date" value="" class="date-selector"></p>
+        <p><span class="time"></span> on <input type="date" min="2012-10-03" value="" class="date-selector"></p>
         <p><img class="weather-icon"><span class="weather-desc"></span></p>
         <p>Temp: <span class="weather-temp"></span></p>
         <p>Wind Speed: <span class="weather-wind"></span></p>
@@ -29,8 +29,8 @@
 
       <section class="config">
         <h2>Config</h2>
-        <p><input type="number" class="timescale" value=""> seconds = 1 hour</p>
-        <p>1 <img src="assets/images/bikeIcon.svg" class="bike-icon"> = <input type="number" class="bikescale"> bikes</p>
+        <p><input type="number" class="timescale" min="1" max="60" value=""> seconds = 1 hour</p>
+        <p>1 <img src="assets/images/bikeIcon.svg" class="bike-icon"> = <input type="number" class="bikescale" min="1" value=""> bikes</p>
       </section>
 
       <section class="info">
