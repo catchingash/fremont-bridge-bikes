@@ -60,7 +60,7 @@ WeatherRepository.prototype.recordData = function(date, api_response) {
     var weather = allWeather[closestWeatherIndex];
     var w = {
       icon: weather['weather'][0]['icon'],
-      desc: weather['weather'][0]['description'],
+      desc: this.formatDesc(weather['weather'][0]['description']),
       temp: weather.main.temp,
       windSpeed: weather.wind.speed
     }
@@ -89,6 +89,17 @@ WeatherRepository.prototype.updateTemp = function(temp) {
 
 WeatherRepository.prototype.updateWindSpeed = function(speed) {
   this.displayWind.text(speed + ' mph');
+}
+
+WeatherRepository.prototype.formatDesc = function(desc) {
+  desc = desc.split(' ');
+  for (var i = 0; i < desc.length; i++) {
+    var letter = desc[i][0];
+    desc[i] = desc[i].replace(letter, letter.toUpperCase()); // replace will replace the first instance only
+  }
+  desc = desc.join(' ');
+
+  return desc;
 }
 
 WeatherRepository.prototype._convertK_F = function(K) {
