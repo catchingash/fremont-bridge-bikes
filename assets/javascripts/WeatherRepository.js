@@ -26,7 +26,6 @@ WeatherRepository.prototype.fetch = function(date, callback) {
 }
 
 WeatherRepository.prototype.fetchURL = function(date) {
-  // http://api.openweathermap.org/data/2.5/history/city?lat=47.65&lon=-122.35&type=hour&start=1349247600&end=1349334000
   var start = date.getTime()/1000;
   var end = start + 86400; // 86400 seconds/day
   var url = this.BASE_URL + "&start=" + start + "&end=" + end;

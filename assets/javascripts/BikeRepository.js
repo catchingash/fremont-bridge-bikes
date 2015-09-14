@@ -22,7 +22,6 @@ BikeRepository.prototype.fetch = function(date, callback) {
 }
 
 BikeRepository.prototype.fetchURL = function(date) {
-  // https://data.seattle.gov/resource/65db-xm6k.json?$where=date >= '2012-10-03' and date < '2012-10-04'
   var d1 = date.getFullYear() + '-' + this._to2Digits(date.getMonth() + 1) + '-' + this._to2Digits(date.getDate());
   var d2 = date.getFullYear() + '-' + this._to2Digits(date.getMonth() + 1) + '-' + this._to2Digits(date.getDate() + 1);
   var url = this.BASE_URL + "$where=date >= '" + d1 +  "T00:00:00' and date < '" + d2 + "T00:00:00'";
@@ -53,31 +52,36 @@ BikeRepository.prototype._to2Digits = function(num) {
 BikeRepository.prototype.update = function(date, i) {
   var nbNum = this.data[date][i]['fremont_bridge_nb'];
   var sbNum = this.data[date][i]['fremont_bridge_sb'];
-  this.animateNBBikes(parseInt(nbNum)/bikeScale, 0);
-  this.animateSBBikes(parseInt(sbNum)/bikeScale, 0);
+  this.animateNBBikes(nbNum, 0);
+  this.animateSBBikes(sbNum, 0);
 
   $('.nb-rate').text(nbNum);
   $('.sb-rate').text(sbNum);
 }
 
 BikeRepository.prototype.animateNBBikes = function(num, iterator) {
-  // if there are 0 bikes, it'll still send a bike!
+  if (num < 1) { return; }
+
   var bike = $('<img src="assets/images/bike.svg" class="bike-small bike-nb">');
   bike.on('animationend', function() { $(this).remove(); });
   this.BIKE_DIV.append(bike);
 
-  if (iterator < (num - 1)) {
+  var scaledNum = num / bikeScale;
+  if (iterator < (scaledNum - 1)) {
     setTimeout(this.animateNBBikes.bind(this), HOUR_LENGTH/num, num, iterator + 1)
   }
 }
 
 BikeRepository.prototype.animateSBBikes = function(num, iterator) {
-  // if there are 0 bikes, it'll still send a bike!
+  if (num < 1) { return; }
+
+  var scaledNum = num / bikeScale;
   var bike = $('<img src="assets/images/bike.svg" class="bike-small bike-sb">');
   bike.on('animationend', function() { $(this).remove(); });
   this.BIKE_DIV.append(bike);
 
-  if (iterator < (num - 1)) {
+  var scaledNum = num / bikeScale;
+  if (iterator < (scaledNum - 1)) {
     setTimeout(this.animateSBBikes.bind(this), HOUR_LENGTH/num, num, iterator + 1)
   }
 }
