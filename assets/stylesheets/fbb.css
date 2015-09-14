@@ -20,7 +20,8 @@ section {
   padding: 0 2em;
   width: 25%;
   min-width: 15em;
-  background-color: hsla(0, 0%, 95%, 1);
+  background-color: hsla(0, 0%, 97%, 1);
+  border-radius: 1em;
 }
 
 .config {
