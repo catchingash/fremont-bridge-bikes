@@ -54,12 +54,9 @@ input[type=number] {
   content: '';
 }
 
-.nb-rate {
-  color: red;
-}
-
-.sb-rate {
-  color: red;
+.nb-rate, .sb-rate {
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .weather-icon {
