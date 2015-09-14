@@ -68,7 +68,7 @@ BikeRepository.prototype.animateNBBikes = function(num, iterator) {
 
   var scaledNum = num / bikeScale;
   if (iterator < (scaledNum - 1)) {
-    setTimeout(this.animateNBBikes.bind(this), HOUR_LENGTH/num, num, iterator + 1)
+    setTimeout(this.animateNBBikes.bind(this), HOUR_LENGTH/scaledNum, num, iterator + 1)
   }
 }
 
@@ -82,6 +82,6 @@ BikeRepository.prototype.animateSBBikes = function(num, iterator) {
 
   var scaledNum = num / bikeScale;
   if (iterator < (scaledNum - 1)) {
-    setTimeout(this.animateSBBikes.bind(this), HOUR_LENGTH/num, num, iterator + 1)
+    setTimeout(this.animateSBBikes.bind(this), HOUR_LENGTH/scaledNum, num, iterator + 1)
   }
 }
