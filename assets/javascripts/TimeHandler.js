@@ -9,5 +9,11 @@ TimeHandler.prototype.update = function(date, iterator) {
 };
 
 TimeHandler.prototype.updateTime = function(time) {
- this.displayTime.text(time.toLocaleTimeString());
+  var hours = time.getHours();
+  if (hours < 12) {
+    hours = hours < 1 ? '12 AM' : hours + ' AM';
+  } else {
+    hours = hours == 12 ? '12 PM' : (hours % 12) + ' PM';
+  }
+  this.displayTime.text(hours);
 }
