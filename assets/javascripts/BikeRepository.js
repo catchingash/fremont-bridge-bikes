@@ -29,8 +29,8 @@ BikeRepository.prototype.fetchURL = function(date) {
 }
 
 BikeRepository.prototype.handleError = function(data) {
-  alert('Sorry, something went wrong!');
-  console.log('Error: data was: ' + data);
+  alert('Sorry, something went wrong with the bike data!');
+  console.log('Error: data was: ', data);
 }
 
 BikeRepository.prototype.recordData = function(date, api_response) {

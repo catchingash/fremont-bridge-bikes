@@ -34,8 +34,8 @@ WeatherRepository.prototype.fetchURL = function(date) {
 }
 
 WeatherRepository.prototype.handleError = function(data) {
-  alert('Sorry, something went wrong!');
-  console.log('Error: data was: ' + data);
+  alert('Sorry, something went wrong with the weather data!');
+  console.log('Error: data was: ', data);
 }
 
 WeatherRepository.prototype.recordData = function(date, api_response) {
