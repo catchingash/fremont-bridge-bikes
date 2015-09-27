@@ -60,11 +60,11 @@ FBB.display = function(date) {
 }
 
 FBB.triggerDisplay = function(date, iterator) {
-  if (!(weatherRepository.data[date] && bikeRepository.data[date])) { return; }
+  // if (!(weatherRepository.data[date] && bikeRepository.data[date])) { return; }
 
   timeHandler.update(date, iterator);
   bikeRepository.update(date, iterator);
-  weatherRepository.update(date, iterator);
+  // weatherRepository.update(date, iterator);
 
   if (iterator < 23) {
     timeouts.push(setTimeout(FBB.triggerDisplay, HOUR_LENGTH, date, iterator + 1));
