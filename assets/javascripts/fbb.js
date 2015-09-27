@@ -55,7 +55,7 @@ FBB.display = function(date) {
   FBB.clearBikes();
 
   bikeRepository.fetch(date, FBB.triggerDisplay);
-  weatherRepository.fetch(date, FBB.triggerDisplay);
+  // weatherRepository.fetch(date, FBB.triggerDisplay);
   timeHandler.updateDate(date);
 }
 
