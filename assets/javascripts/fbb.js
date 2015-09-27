@@ -38,9 +38,9 @@ $(document).ready(function() {
 });
 
 FBB.initializeView = function() {
-  timeHandler = new TimeHandler;
-  bikeRepository = new BikeRepository;
-  weatherRepository = new WeatherRepository;
+  timeHandler = new TimeHandler();
+  bikeRepository = new BikeRepository();
+  weatherRepository = new WeatherRepository();
 
   $('input').attr('value', defaultStartDate);
   $('.bikescale').attr('value', bikeScale);
