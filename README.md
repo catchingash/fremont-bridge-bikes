@@ -1,5 +1,11 @@
 # Fremont Bridge Bikes #
+[See it live!](http://catchingash.github.io/fremont-bridge-bikes/)
 
+## Known issues ##
+  - The weather data is currently unavailable. The API that I was using has restricted access to historical data, and I have not had a chance to find a new API.
+  - The weather is not synced correctly for users that are not located in Seattle, or if the current daylight savings do not match the daylight savings on the date viewed.
+
+## Initial Project Roadmap ##
 1. What is the goal of the project?
   - To provide a visual representation of bike traffic on the Fremont bridge.
 1.  Who is the target audience (can be just yourself)?
@@ -23,8 +29,3 @@
   - The final product will display the hourly weather and bike traffic for a given day.
     - The bike traffic will be displayed either as a list of hours with animations for bike traffic for each hour, or as a single time-lapse of the entire day.
   - The user can choose the day displayed.
-
-[Trello Board](https://trello.com/b/6TRsQrTE/ashley-break-project)
-
-
-Note: This will not work correctly for users that are not located in Seattle, or if the current daylight savings do not match the daylight savings on the date viewed.
