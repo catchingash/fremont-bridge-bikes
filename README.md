@@ -6,18 +6,21 @@
   - The weather is not synced correctly for users that are not located in Seattle, or if the current daylight savings do not match the daylight savings on the date viewed.
 
 ## Initial Project Roadmap ##
+This project was completed while on break from Ada Developers Academy. Below are my initial answers to the questions asked at the start of the project.
+
 1. What is the goal of the project?
   - To provide a visual representation of bike traffic on the Fremont bridge.
 1.  Who is the target audience (can be just yourself)?
   - Curious Seattle residents who are interested in biking culture.
 1. What are your personal learning goals?
-  - Integrating with 3rd party APIs
-  - Learning more about how to animate
-  - Learn more about how to visually represent data
-  - Learn more about how to create a visually minimalist design
+  - Getting more exposure to:
+    - Integrating with 3rd-party APIs
+    - Animation
+    - Visually representing data
+    - Creating a visually minimalist design
 1. What technologies/frameworks/patterns will you be employing?
   - This will be done entirely in HTML/CSS + JavaScript.
-  - All testing will be completed manually.
+  - All testing will be completed manually, since we have not learned JS testing yet.
   - Data from APIs:
     - [Fremont Bridge Bike Traffic](https://data.seattle.gov/resource/65db-xm6k.json) from the City of Seattle (powered by Socrata)
     - [Historical weather data](http://openweathermap.org/history) from Open Weather Map
